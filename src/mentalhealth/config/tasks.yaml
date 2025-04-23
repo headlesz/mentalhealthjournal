@@ -1,0 +1,101 @@
+cbt_analysis_task:
+  description: >
+    Analyze the patient's journal entry from a cognitive-behavioral perspective: {topic}
+    Focus on identifying cognitive distortions, negative thought patterns, and behavioral responses.
+    Provide practical CBT techniques and exercises to challenge unhelpful thoughts.
+    Keep your response concise (max 250 words) as it will be displayed alongside other perspectives.
+  expected_output: >
+    This is not a letter. Do not write Dear or address me as a patient, talk to me directly.
+    A concise CBT-focused therapeutic response that includes:
+    1. Identification of cognitive distortions or unhelpful thought patterns
+    2. How these thoughts may be influencing emotions and behaviors
+    3. Specific CBT techniques or exercises to challenge these thoughts
+    4. A brief encouragement focused on cognitive restructuring
+    
+    Important: Surround key insights, recommendations, or important points with "** [TEXT] **" 
+    to highlight them for the patient. For example: "** [Try thought challenging] **"
+    Keep your response under 250 words. Do not include a footer or signature.
+    Formatted as markdown without '```'
+  agent: therapist_cbt
+
+humanistic_analysis_task:
+  description: >
+    Analyze the patient's journal entry from a humanistic perspective: {topic}
+    Focus on self-actualization, authenticity, personal growth, and emotional awareness.
+    Emphasize the patient's inherent capacity for growth and self-understanding.
+    Keep your response concise (max 250 words) as it will be displayed alongside other perspectives.
+  expected_output: >
+   This is not a letter. Do not write Dear or address me as a patient, talk to me directly.
+    A concise humanistic therapeutic response that includes:
+    1. Validation of the patient's emotional experience
+    2. Reflections on authenticity and self-acceptance
+    3. Encouragement for personal growth and self-exploration
+    4. A brief message emphasizing the patient's inherent worth and capacity
+    
+    Important: Surround key insights, recommendations, or important points with "** [TEXT] **" 
+    to highlight them for the patient. For example: "** [Honor your authentic feelings] **"
+    Keep your response under 250 words. Do not include a footer or signature.
+    Formatted as markdown without '```'
+  agent: therapist_humanistic
+
+psychodynamic_analysis_task:
+  description: >
+    Analyze the patient's journal entry from a psychodynamic perspective: {topic}
+    Focus on unconscious patterns, past influences, defense mechanisms, and emotional depth.
+    Explore how past experiences might be influencing current feelings and behaviors.
+    Keep your response concise (max 250 words) as it will be displayed alongside other perspectives.
+  expected_output: >
+   This is not a letter. Do not write Dear or address me as a patient, talk to me directly.
+    A concise psychodynamic therapeutic response that includes:
+    1. Observations about potential unconscious patterns or defenses
+    2. Reflections on how past experiences might be influencing present feelings
+    3. Insights about emotional depth and underlying meanings
+    4. A brief encouragement for deeper self-understanding
+    
+    Important: Surround key insights, recommendations, or important points with "** [TEXT] **" 
+    to highlight them for the patient. For example: "** [Consider how past relationships influence current feelings] **"
+    Keep your response under 250 words. Do not include a footer or signature.
+    Formatted as markdown without '```'
+  agent: therapist_psychodynamic
+
+therapy_summary_task:
+  description: >
+    Review the insights provided by the three therapists (CBT, Humanistic, and Psychodynamic) about: {topic}
+    Synthesize their perspectives into a cohesive, integrated therapeutic response.
+    Highlight the most valuable insights and recommendations from each approach.
+    Create a unified message that honors the wisdom of each perspective.
+  expected_output: >
+    A thoughtful summary that integrates the three therapeutic perspectives and includes:
+    1. A brief overview acknowledging the value of multiple perspectives
+    2. The most important insights from each therapeutic approach
+    3. Integrated recommendations that combine the strengths of each approach
+    4. A compassionate closing message of support and encouragement
+    
+    Important: Surround key insights, recommendations, or important points with "** [TEXT] **" 
+    to highlight them for the patient. For example: "** [Combining these approaches suggests...] **"
+    Do not include a footer or signature, this is not a letter.
+    Formatted as markdown without '```'
+  agent: therapy_summarizer
+  dependencies:
+    - cbt_analysis_task
+    - humanistic_analysis_task
+    - psychodynamic_analysis_task
+
+mood_analysis_task:
+  description: >
+    Analyze the emotional tone and mood patterns in the journal entry: {topic}
+    Provide a quantitative assessment of the patient's emotional state.
+    Identify key emotions present and their relative intensity.
+    Note any concerning patterns or shifts in mood.
+  expected_output: >
+    A detailed mood analysis that includes:
+    1. Overall mood rating (scale of 1-10, where 1 is extremely negative and 10 is extremely positive)
+    2. Primary emotions identified (e.g., anxiety, sadness, joy, anger)
+    3. Intensity ratings for each emotion (scale of 1-5)
+    4. Brief explanation of the mood assessment
+    
+    Important: Surround key mood indicators, significant emotional patterns, or important observations with "** [TEXT] **" 
+    to highlight them for the patient. For example: "** [Anxiety level: Moderate (3/5)] **"
+    Do not include a footer or signature, this is not a letter.
+    Formatted as markdown without '```'
+  agent: mood_rater

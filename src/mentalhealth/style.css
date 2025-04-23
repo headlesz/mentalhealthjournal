@@ -1,0 +1,559 @@
+/* Modern CSS with better aesthetics */
+:root {
+    --primary-color: #4a6fa5;
+    --primary-hover: #3a5a8c;
+    --secondary-color: #6c757d;
+    --light-color: #f8f9fa;
+    --dark-color: #343a40;
+    --success-color: #28a745;
+    --border-radius: 8px;
+    --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s ease;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f5f7fa;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+header {
+    background-color: var(--primary-color);
+    color: white;
+    padding: 2rem 0;
+    text-align: center;
+}
+
+header h1 {
+    margin: 0;
+    font-size: 2.5rem;
+}
+
+header p {
+    margin: 0.5rem 0 0;
+    font-size: 1.1rem;
+    opacity: 0.9;
+}
+
+/* Navigation styles */
+.main-nav {
+    margin-top: 1.5rem;
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.main-nav a {
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    font-weight: 500;
+    opacity: 0.8;
+}
+
+.main-nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+    opacity: 1;
+}
+
+.main-nav a.active {
+    background-color: rgba(255, 255, 255, 0.2);
+    opacity: 1;
+    font-weight: 600;
+}
+
+main {
+    flex: 1;
+    padding: 2rem 0;
+}
+
+.container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+main .container {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-bottom: 2rem;
+}
+
+footer {
+    background-color: var(--dark-color);
+    color: white;
+    text-align: center;
+    padding: 1rem 0;
+    margin-top: 2rem;
+}
+
+footer .container {
+    background-color: transparent;
+    box-shadow: none;
+    padding: 0;
+}
+
+footer p {
+    margin: 0;
+    font-size: 0.9rem;
+    opacity: 0.8;
+}
+
+textarea {
+    width: 100%;
+    height: 200px;
+    padding: 1rem;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: var(--border-radius);
+    resize: vertical;
+    transition: var(--transition);
+    margin-bottom: 1rem;
+    font-family: inherit;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(74, 111, 165, 0.2);
+}
+
+button[type="submit"] {
+    padding: 0.75rem 1.5rem;
+    font-size: 16px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+button[type="submit"]:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+}
+
+button[type="submit"]:active {
+    transform: translateY(0);
+}
+
+/* Icon styles */
+.fas {
+    margin-right: 0.5rem;
+}
+
+button .fas {
+    margin-right: 0.3rem;
+}
+
+/* Therapists container styles */
+.therapists-container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto 2rem auto;
+}
+
+.therapists-container h2 {
+    color: var(--primary-color);
+    margin: 1rem 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    justify-content: center;
+}
+
+.therapists-container h2 .fas {
+    color: var(--primary-color);
+    font-size: 1.5rem;
+}
+
+.therapist-cards {
+    display: flex;
+    flex-direction: row;
+    gap: 1.5rem;
+    margin-top: 1rem;
+}
+
+.therapist-card {
+    flex: 1;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: left;
+    transition: var(--transition);
+}
+
+.therapist-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.1);
+}
+
+.cbt-card {
+    border-top: 4px solid #4a90e2; /* Blue for CBT */
+}
+
+.humanistic-card {
+    border-top: 4px solid #28a745; /* Green for Humanistic */
+}
+
+.psychodynamic-card {
+    border-top: 4px solid #9c27b0; /* Purple for Psychodynamic */
+}
+
+.therapist-card h3 {
+    color: var(--primary-color);
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #eee;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    font-size: 1.1rem;
+}
+
+.cbt-card h3 .fas {
+    color: #4a90e2;
+}
+
+.humanistic-card h3 .fas {
+    color: #28a745;
+}
+
+.psychodynamic-card h3 .fas {
+    color: #9c27b0;
+}
+
+/* Analysis container styles */
+.analysis-container {
+    width: 80%;
+    max-width: 800px;
+    margin: 0 auto 2rem auto;
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.therapy-section, .mood-section {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: left;
+}
+
+.therapy-section {
+    border-top: 4px solid #4a90e2; /* Blue for therapy */
+}
+
+.mood-section {
+    border-top: 4px solid #e2574a; /* Red for mood */
+}
+
+.therapy-section h2, .mood-section h2 {
+    color: var(--primary-color);
+    margin-top: 0;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid #eee;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+}
+
+.therapy-section h2 .fas {
+    color: #4a90e2;
+    font-size: 1.5rem;
+}
+
+.mood-section h2 .fas {
+    color: #e2574a;
+    font-size: 1.5rem;
+}
+
+.analysis-content {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    border: 1px solid #eee;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Bold text styling for ** [TEXT] ** pattern */
+.analysis-content .bold-text {
+    font-weight: 700;
+    color: #000;
+    background-color: rgba(74, 144, 226, 0.1);
+    padding: 0 4px;
+    border-radius: 3px;
+}
+
+.mood-section .analysis-content .bold-text {
+    background-color: rgba(226, 87, 74, 0.1);
+}
+
+pre {
+    background-color: #f8f9fa;
+    padding: 1.5rem;
+    border-radius: var(--border-radius);
+    overflow-x: auto;
+    white-space: pre-wrap;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    line-height: 1.6;
+    color: #333;
+    border: 1px solid #eee;
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+/* Markdown-like styling for the pre content */
+pre h1, pre h2, pre h3 {
+    color: var(--primary-color);
+}
+
+pre strong {
+    font-weight: bold;
+    color: #000;
+}
+
+pre em {
+    font-style: italic;
+}
+
+pre ul, pre ol {
+    margin-left: 2rem;
+}
+
+/* Journal history styles */
+.history-actions {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 1rem;
+}
+
+.clear-entries-btn {
+    padding: 0.5rem 1rem;
+    background-color: #dc3545;
+    color: white;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.clear-entries-btn:hover {
+    background-color: #c82333;
+    transform: translateY(-2px);
+}
+
+.clear-entries-btn:active {
+    transform: translateY(0);
+}
+
+.entries-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.entry-card {
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.entry-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.entry-header {
+    padding: 1rem 1.5rem;
+    background-color: #f8f9fa;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.entry-header h3 {
+    margin: 0;
+    font-size: 1.1rem;
+    color: var(--primary-color);
+}
+
+.view-btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.view-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+.entry-preview {
+    padding: 1.5rem;
+    color: #555;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.no-entries {
+    text-align: center;
+    padding: 3rem 1rem;
+    background-color: white;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}
+
+.no-entries p {
+    margin-bottom: 1.5rem;
+    color: #666;
+}
+
+.create-entry-btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    transition: var(--transition);
+}
+
+.create-entry-btn:hover {
+    background-color: var(--primary-hover);
+    transform: translateY(-2px);
+}
+
+/* Single entry page styles */
+.entry-details {
+    margin-bottom: 2rem;
+}
+
+.entry-meta {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-bottom: 1.5rem;
+}
+
+.entry-date {
+    color: #666;
+    font-size: 0.9rem;
+    margin: 0.5rem 0;
+}
+
+.back-btn {
+    display: inline-block;
+    padding: 0.4rem 0.8rem;
+    background-color: #f8f9fa;
+    color: #555;
+    text-decoration: none;
+    border-radius: var(--border-radius);
+    font-size: 0.9rem;
+    transition: var(--transition);
+    border: 1px solid #ddd;
+    margin-top: 0.5rem;
+}
+
+.back-btn:hover {
+    background-color: #eee;
+}
+
+.entry-content {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+}
+
+.entry-text {
+    white-space: pre-wrap;
+    line-height: 1.6;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .container, .therapy-section, .mood-section {
+        width: 95%;
+        padding: 1rem;
+    }
+    
+    textarea {
+        height: 150px;
+    }
+    
+    .analysis-container {
+        width: 95%;
+    }
+    
+    .entry-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .entry-header h3 {
+        margin-bottom: 0.5rem;
+    }
+    
+    .main-nav {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .main-nav a {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
+    
+    .therapists-container {
+        width: 95%;
+    }
+    
+    .therapist-cards {
+        flex-direction: column;
+    }
+    
+    .therapist-card {
+        margin-bottom: 1rem;
+    }
+}

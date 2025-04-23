@@ -1,0 +1,7 @@
+It sounds like you had a tough time managing your anxiety before the hackathon, which may have been fueled by **catastrophic thinking** (assuming the worst-case scenario) and **all-or-nothing thinking** (feeling like a total failure if you didn't win). When you arrived early, you paced around, which is a classic example of ** avoidance behavior**. This might have helped you feel a bit more comfortable, but it didn't address the underlying anxiety.
+
+Once you started talking to your tablemates, you began to feel more at ease, which suggests that **social support** can be a powerful way to manage anxiety. However, when you couldn't think of a project, you started to feel depressed, indicating a pattern of **negative self-talk** and **catastrophic thinking** again.
+
+To challenge these thoughts, try **reality-checking**: ask yourself if your thoughts are based on facts or assumptions. For example, "Is it really true that I'm a total failure if I don't win?" or "Is it really true that I know nothing about coding?"
+
+**Practice cognitive restructuring by reframing negative thoughts** into more balanced, realistic ones. For instance, "I'm feeling anxious, but I've prepared well, and I can learn from this experience." And remember, your worth isn't defined by one event or outcome – you're capable of growth and development, regardless of the outcome.
