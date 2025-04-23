@@ -54,10 +54,10 @@ Replace `your_cerebras_api_key` with your actual Cerebras API key.
 
 ## Running the Application
 
-Start the Flask web server:
+Start the Flask web server by running the command in the directory /src/mentalhealth/:
 
 ```bash
-python -m src.mentalhealth.app
+python ./app.py
 ```
 
 Then open your browser to `http://127.0.0.1:5000/` to access the journal interface.
