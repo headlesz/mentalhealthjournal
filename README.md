@@ -54,7 +54,7 @@ Replace `your_cerebras_api_key` with your actual Cerebras API key.
 
 ## Running the Application
 
-Start the Flask web server by running the command in the directory /src/mentalhealth/:
+Start the Flask web server by running the command in the directory **/src/mentalhealth/**:
 
 ```bash
 python ./app.py
