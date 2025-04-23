@@ -1,54 +1,93 @@
-# Mentalhealth Crew
+# Mental Health Journal Analysis
 
-Welcome to the Mentalhealth Crew project, powered by [crewAI](https://crewai.com). This template is designed to help you set up a multi-agent AI system with ease, leveraging the powerful and flexible framework provided by crewAI. Our goal is to enable your agents to collaborate effectively on complex tasks, maximizing their collective intelligence and capabilities.
+A therapeutic journaling application that analyzes journal entries using multiple therapeutic perspectives powered by AI agents.
+
+## Overview
+
+This application allows users to:
+
+1. Write journal entries about their thoughts and feelings
+2. Receive therapeutic insights from multiple perspectives:
+   - Cognitive Behavioral Therapy (CBT)
+   - Humanistic Therapy
+   - Psychodynamic Therapy
+3. Get a comprehensive therapy summary integrating all perspectives
+4. Receive mood analysis with quantitative emotional assessment
+5. View history of past journal entries and analyses
 
 ## Installation
 
-Ensure you have Python >=3.10 <3.13 installed on your system. This project uses [UV](https://docs.astral.sh/uv/) for dependency management and package handling, offering a seamless setup and execution experience.
+### Prerequisites
 
-First, if you haven't already, install uv:
+- Python 3.10 or higher
+- [UV](https://docs.astral.sh/uv/) package manager
 
-```bash
-pip install uv
-```
+### Setup
 
-Next, navigate to your project directory and install the dependencies:
-
-(Optional) Lock the dependencies and install them by using the CLI command:
-```bash
-crewai install
-```
-### Customizing
-
-**Add your `OPENAI_API_KEY` into the `.env` file**
-
-- Modify `src/mentalhealth/config/agents.yaml` to define your agents
-- Modify `src/mentalhealth/config/tasks.yaml` to define your tasks
-- Modify `src/mentalhealth/crew.py` to add your own logic, tools and specific args
-- Modify `src/mentalhealth/main.py` to add custom inputs for your agents and tasks
-
-## Running the Project
-
-To kickstart your crew of AI agents and begin task execution, run this from the root folder of your project:
+1. Clone this repository
+2. Install required packages using UV:
 
 ```bash
-$ crewai run
+uv add crewai crewai_tools flask
 ```
 
-This command initializes the mentalhealth Crew, assembling the agents and assigning them tasks as defined in your configuration.
+3. Create a `.env` file in the project root with the following variables:
 
-This example, unmodified, will run the create a `report.md` file with the output of a research on LLMs in the root folder.
+```
+model=llama3.1-8-b
+CEREBRAS_API_KEY=your_cerebras_api_key
+```
 
-## Understanding Your Crew
+Replace `your_cerebras_api_key` with your actual Cerebras API key.
 
-The mentalhealth Crew is composed of multiple AI agents, each with unique roles, goals, and tools. These agents collaborate on a series of tasks, defined in `config/tasks.yaml`, leveraging their collective skills to achieve complex objectives. The `config/agents.yaml` file outlines the capabilities and configurations of each agent in your crew.
+## Project Structure
 
-## Support
+- `src/mentalhealth/`: Main application directory
+  - `app.py`: Flask web application
+  - `crew.py`: CrewAI configuration and agent setup
+  - `database.py`: SQLite database management
+  - `config/`: Configuration files
+    - `agents.yaml`: Agent definitions
+    - `tasks.yaml`: Task definitions
+  - `tools/`: Custom tools for agents
+  - HTML templates and CSS for the web interface
 
-For support, questions, or feedback regarding the Mentalhealth Crew or crewAI.
-- Visit our [documentation](https://docs.crewai.com)
-- Reach out to us through our [GitHub repository](https://github.com/joaomdmoura/crewai)
-- [Join our Discord](https://discord.com/invite/X4JWnZnxPb)
-- [Chat with our docs](https://chatg.pt/DWjSBZn)
+## Running the Application
 
-Let's create wonders together with the power and simplicity of crewAI.
+Start the Flask web server:
+
+```bash
+python -m src.mentalhealth.app
+```
+
+Then open your browser to `http://127.0.0.1:5000/` to access the journal interface.
+
+## How It Works
+
+1. User submits a journal entry through the web interface
+2. The entry is processed by multiple AI therapist agents:
+   - CBT Therapist: Identifies cognitive distortions and negative thought patterns
+   - Humanistic Therapist: Focuses on self-actualization and personal growth
+   - Psychodynamic Therapist: Explores unconscious patterns and past influences
+3. A Therapy Summarizer agent integrates insights from all perspectives
+4. A Mood Rater agent provides quantitative emotional assessment
+5. Results are displayed in the web interface and stored in the database
+
+## Features
+
+- **Multi-perspective Analysis**: Get insights from different therapeutic approaches
+- **Integrated Summary**: Comprehensive therapeutic guidance combining all perspectives
+- **Mood Analysis**: Quantitative assessment of emotional states
+- **Journal History**: Access and review past entries and analyses
+- **Web Interface**: User-friendly interface for journaling and viewing results
+
+## Customization
+
+You can customize the agents and tasks by modifying the YAML configuration files:
+
+- `src/mentalhealth/config/agents.yaml`: Define agent roles, goals, and backstories
+- `src/mentalhealth/config/tasks.yaml`: Define task descriptions and expected outputs
+
+## License
+
+[MIT License](LICENSE)
