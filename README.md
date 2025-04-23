@@ -88,6 +88,4 @@ You can customize the agents and tasks by modifying the YAML configuration files
 - `src/mentalhealth/config/agents.yaml`: Define agent roles, goals, and backstories
 - `src/mentalhealth/config/tasks.yaml`: Define task descriptions and expected outputs
 
-## License
-
-[MIT License](LICENSE)
+# made with <3 @ Into the Vectorverse @ AWS GenAI Loft
